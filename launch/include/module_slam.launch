@@ -1,0 +1,10 @@
+<launch>
+
+    <arg name="project" default="tc_lio_sam"/>
+    
+    <node pkg="$(arg project)" type="$(arg project)_imu_pre_integration" name="$(arg project)_imu_pre_integration" output="screen" respawn="true"/>
+    <node pkg="$(arg project)" type="$(arg project)_image_projection"    name="$(arg project)_image_projection"    output="screen" respawn="true"/>
+    <node pkg="$(arg project)" type="$(arg project)_feature_extraction"  name="$(arg project)_feature_extraction"  output="screen" respawn="true"/>
+    <node pkg="$(arg project)" type="$(arg project)_map_optimization"    name="$(arg project)_map_optimization"    output="screen" respawn="true"/>
+    
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+
+    <arg name="project" default="tc_lio_sam"/>
+    
+    <!-- Parameters -->
+    <rosparam file="$(find tc_lio_sam)/config/params.yaml" command="load" />
+
+    <!--- SLAM -->
+    <include file="$(find tc_lio_sam)/launch/include/module_slam.launch" />
+
+    <!--- Run Rviz-->
+    <include file="$(find tc_lio_sam)/launch/include/module_rviz.launch" />
+
+</launch>
